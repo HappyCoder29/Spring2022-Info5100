@@ -31,7 +31,7 @@ public class Main {
         int dependents = 0;
         float salary = -1;
 
-        salary = calculateSalarySwitchStatement(baseSalary, dependents);
+        salary = calculateSalary(baseSalary, dependents, 2022);
         System.out.println("Salary = " + salary);
         dependents = 2;
         salary = calculateSalarySwitchStatement(baseSalary, dependents);
@@ -60,6 +60,19 @@ public class Main {
             salary = baseSalary - baseSalary * 0.2f;
         }
         return salary;
+    }
+
+
+
+    private static float calculateSalary(float baseSalary, int dependents, int year){
+        float salary = 0;
+
+        if( year < 2000){
+           return calculateSalary(baseSalary, dependents);
+        }else{
+            return calculateSalarySwitchStatement(baseSalary, dependents);
+        }
+
     }
 
     private static float calculateSalarySwitchStatement(float baseSalary, int dependents){
