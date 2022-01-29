@@ -1,10 +1,17 @@
 package edu.northeastern.ashish;
 
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
         String str = "ABCD";
         System.out.println(reverseString(str));
+
+        System.out.println(base64(12345678912));
+        HashMap<Integer, Integer> map = new HashMap<>();
+        HashSet<Integer> set = new HashSet<>();
+       
 
     }
 
@@ -23,6 +30,17 @@ public class Main {
             end --;
         }
         return String.valueOf(arr);
+    }
+
+    private static String base64(int decimal){
+        String str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String hashStr = "";
+        while(decimal > 0){
+            hashStr += str.charAt(decimal%62);
+            decimal /=62;
+        }
+        return  hashStr;
+
     }
 
 }
