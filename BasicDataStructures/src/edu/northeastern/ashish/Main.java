@@ -49,7 +49,7 @@ public class Main {
      * If Number of dependents = 1 tax is 30%
      * If Number of dependents is greater than 1 tax is 20%
      * */
-    private static float calculateSalary(float baseSalary, int dependents){
+     static float calculateSalary(float baseSalary, int dependents){
         float salary = 0;
         if (dependents == 0) {
             int temp = 5;
