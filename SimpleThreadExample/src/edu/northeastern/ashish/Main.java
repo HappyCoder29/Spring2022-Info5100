@@ -3,6 +3,13 @@ package edu.northeastern.ashish;
 public class Main {
 
     public static void main(String[] args) {
+        float result = 0;
+        try {
+            result = divide(100,0);
+        } catch (Exception e) {
+           // e.printStackTrace();
+        }
+        System.out.println(result);
 
        Thread[] arr = new Thread[5];
 
@@ -20,8 +27,11 @@ public class Main {
                 e.printStackTrace();
             }
         }
+    }
 
 
+    private static float divide(int i, int j) throws Exception{
+        return i/j;
     }
 
 }
