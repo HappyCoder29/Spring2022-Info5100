@@ -1,7 +1,9 @@
 package edu.northeastern.ashish;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 
 public class Main {
 
@@ -14,6 +16,8 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        System.out.println(hasUniqueChars(null));
 
         queueA = new LinkedList<>();
         queueB = new LinkedList<>();
@@ -33,5 +37,16 @@ public class Main {
 
         th2.start();
 
+    }
+
+    private static boolean hasUniqueChars(String str){
+        Set<Character> set = new HashSet<>();
+        for(char c : str.toCharArray()){
+            if(set.contains(c)){
+                return false;
+            }
+            set.add(c);
+        }
+        return true;
     }
 }
