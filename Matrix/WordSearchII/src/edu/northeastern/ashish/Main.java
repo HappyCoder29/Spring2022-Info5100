@@ -1,9 +1,59 @@
 package edu.northeastern.ashish;
 
+import java.util.ArrayList;
+
+//https://leetcode.com/problems/word-search-ii/
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        String[][] matrix = {
+                {"o","a","a","n"},
+                {"e","t","a","e"},
+                {"i","h","k","r"},
+                {"i","f","l","v"}
+        };
+
+        String[] words = {"oath","pea","eat","rain"};
+
+        for (String word : getWordsOnBoard(matrix, words)) {
+            System.out.println(word);
+        }
+
+    }
+
+    // O(n^ 4)
+    private static ArrayList<String> getWordsOnBoard(String[][] matrix, String[] words){
+
+        ArrayList<String> wordsOnBoard = new ArrayList<>();
+
+        for (String word : words) {
+            if(searchWordInMatrix(matrix, word) == true){
+                wordsOnBoard.add(word);
+            }
+        }
+
+        return wordsOnBoard;
+    }
+
+
+    private static boolean  searchWordInMatrix(String[][] matrix, String word){
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        boolean[][] visited = new boolean[rows][cols];
+        BoxValue<Boolean> bFound = new BoxValue<>(false);
+        int index = 0;
+
+        for(int i = 0 ; i < rows; i ++){
+            for(int j = 0 ; j < cols; j ++){
+                visitNeighbours(matrix, visited,i, j, index, word, bFound );
+                if(bFound.data == true){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
