@@ -16,6 +16,9 @@ public class Main {
 
     }
 
+    // O(NXM) * O(n) where N = rows of Matrix , M = cols of matrix, n = # of characters in word
+    // O(N^3)
+
     private static boolean  searchWordInMatrix(String[][] matrix, String word){
 
         int rows = matrix.length;
