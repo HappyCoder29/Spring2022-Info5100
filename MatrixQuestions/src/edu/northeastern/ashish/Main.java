@@ -19,6 +19,7 @@ public class Main {
     }
 
 
+    // O(NXM) where n = num of rows and m = num of cols
     private static void printInSpiralManner(int[][] matrix) {
 
         int rows = matrix.length;
@@ -78,7 +79,7 @@ public class Main {
 
     }
 
-
+    // O(NXM) where n = num of rows and m = num of cols
     private static int[][] createSpiralMatrix(int n) {
         int rows = n;
         int cols = n;
@@ -139,6 +140,7 @@ public class Main {
 
     }
 
+    // O(NXM) where n = num of rows and m = num of cols
 
     private static int[][] createSpiralMatrix(int n, int m) {
         int rows = n;
